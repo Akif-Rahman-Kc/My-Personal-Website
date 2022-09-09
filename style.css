@@ -383,10 +383,12 @@ header .navbar ul li a:hover{
     display: flex;
     align-items: center;
     font-size: 2rem;
-    color:#eee;
     padding:1rem 0;
     font-weight: normal;
+}
+.contact .row .content .info h3 a{
     text-transform: none;
+    color:#eee;
 }
 
 .contact .row .content .info h3 i{

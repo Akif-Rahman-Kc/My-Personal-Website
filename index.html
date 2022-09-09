@@ -212,9 +212,9 @@
         <h3 class="title">contact info</h3>
 
         <div class="info">
-            <h3> <i class="fas fa-envelope"></i> akifrahman90442@gmail.com </h3>
-            <h3> <i class="fas fa-phone"></i> 9562696976 </h3>
-            <h3> <i class="fas fa-map-marker-alt"></i> Kannur , Kerala , India <br> 670301. </h3>
+            <h3> <i class="fas fa-envelope"></i><a class="" href="mailto:akifrahman90442@gmail.com">akifrahman90442@gmail.com</a></h3>
+            <h3> <i class="fas fa-phone"></i><a href="tel:+91 9562696976">+91 9562696976</a></h3>
+            <h3> <i class="fas fa-map-marker-alt"></i><a href="https://goo.gl/maps/JNGFG3mwYsrCeRW59">Kannur , Kerala , India <br> 670301</a></h3>
         </div>
 
     </div>
@@ -248,27 +248,6 @@
 <!-- custom js file link  -->
 <script src="script.js"></script>
 
-<!-- form submission -->
-
-<script>
-    $("#submit-form").submit((e)=>{
-        e.preventDefault()
-        $.ajax({
-            url:"https://script.google.com/macros/s/AKfycbyeJxCD33GfTiPfzZqh_EJ4AqopIuAsIVH5Bp6VAzimBUNozHRwocKOq6teYk6jEYlYmw/exec",
-            data:$("#submit-form").serialize(),
-            method:"post",
-            success:function (response){
-                alert("Form submitted successfully")
-                window.location.reload()
-                //window.location.href="https://google.com"
-            },
-            error:function (err){
-                alert("Something Error")
-
-            }
-        })
-    })
-</script>
 
 </body>
 </html>

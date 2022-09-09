@@ -10,6 +10,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -218,12 +219,12 @@
 
     </div>
 
-    <form action="">
+    <form id="submit-form" action="">
 
-        <input type="text" placeholder="name" class="box">
-        <input type="email" placeholder="email" class="box">
-        <input type="text" placeholder="place" class="box">
-        <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+        <input type="text" placeholder="name" class="box" name="Name">
+        <input type="email" placeholder="email" class="box" name="Email">
+        <input type="text" placeholder="place" class="box" name="Place">
+        <textarea cols="30" rows="10" class="box message" placeholder="message" name="textMessage"></textarea>
         <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
 
     </form>
@@ -235,32 +236,39 @@
 <!-- contact section ends -->
 
 
-<!-- scroll top button  -->
-
-<a href="#home" class="top">
-    <img src="images/scroll-top-img.png" alt="">
-</a>
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
 <!-- jquery cdn link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
 
 <!-- custom js file link  -->
 <script src="script.js"></script>
 
+<!-- form submission -->
+
+<script>
+    $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbyeJxCD33GfTiPfzZqh_EJ4AqopIuAsIVH5Bp6VAzimBUNozHRwocKOq6teYk6jEYlYmw/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+                alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>
 
 </body>
 </html>

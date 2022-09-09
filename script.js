@@ -1,5 +1,32 @@
 $(document).ready(function(){
 
+  $("#submit-form").validate({
+    rules:{
+      Name:{
+        required:true,
+      },
+      Email:{
+        required:true,
+        email:true
+      },
+      Place:{
+        required:true
+      },
+      Message:{
+        required:true
+      }
+    },
+    messages:{
+      Name:"Enter your Name",
+      Email:{
+        required:"Enter your email address",
+        email:"Please enter email address"
+      },
+      Place:"Enter your Place",
+      textMessage:"Enter the Messages"
+    }
+  })
+
     $('#menu').click(function(){
       $(this).toggleClass('fa-times');
       $('header').toggleClass('toggle');
@@ -35,4 +62,4 @@ $(document).ready(function(){
   
     });
   
-  });
+});
